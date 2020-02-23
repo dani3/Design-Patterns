@@ -1,6 +1,6 @@
 package solid.opencloseprinciple;
 
-class Product {
+public class Product {
     public String name;
     public Color color;
     public Size size;
