@@ -1,7 +1,9 @@
 package main;
 
+import creational.exercise.CodeBuilder;
+import creational.exercise.Field;
+import creational.facetedbuilder.PersonBuilder;
 import creational.fluentbuilder.EmployeeBuilder;
-import creational.fluentbuilder.Person;
 import solid.opencloseprinciple.*;
 
 import java.util.Arrays;
@@ -30,13 +32,33 @@ public class Main {
      */
     public static void fluentBuilder() {
         EmployeeBuilder eb = new EmployeeBuilder();
-        Person sandra = eb
+        creational.fluentbuilder.Person sandra = eb
                 .withName("Sandra")
                 .worksAt("URJC")
                 .build();
     }
 
+    /**
+     * FACETED BUILDER
+     */
+    public static void facetedBuilder() {
+        PersonBuilder pb = new PersonBuilder();
+        creational.facetedbuilder.Person person = pb
+                .lives()
+                    .at("123 London Road")
+                    .withPostCode("123456")
+                .works()
+                    .at("URJC")
+                    .asA("Student")
+                    .earning(500)
+                .build();
+    }
+
     public static void main(String[] args) {
-        ocp();
+        CodeBuilder cb = new CodeBuilder("Person")
+                .addField(new Field("name", "String"))
+                .addField(new Field("age", "int"));
+
+        System.out.println(cb);
     }
 }

@@ -1,7 +1,5 @@
 package solid.opencloseprinciple;
 
-import main.Size;
-
 class SizeSpecification implements Specification<Product> {
 
     private Size size;
