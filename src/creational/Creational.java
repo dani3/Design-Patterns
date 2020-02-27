@@ -1,6 +1,7 @@
 package creational;
 
 import creational.facetedbuilder.PersonBuilder;
+import creational.factory.Point;
 import creational.fluentbuilder.EmployeeBuilder;
 import solid.opencloseprinciple.*;
 
@@ -50,5 +51,9 @@ public class Creational {
                 .asA("Student")
                 .earning(500)
                 .build();
+    }
+
+    public static void factory() {
+        Point cartesianPoint = Point.Factory.newCartesianPoint(2, 3);
     }
 }
